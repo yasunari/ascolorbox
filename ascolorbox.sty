@@ -17,7 +17,7 @@ fonttitle=\gtfamily, IfValueTF={#1}{title=【#2】〈#1〉}{title=【#2】},#4}
 
 
 \DeclareTColorBox{practicebox}{ m O{} }%
-{enhanced,colback=black!10!white, colframe=black!10!white , attach boxed title to top left={xshift=0mm,yshift=1mm}, fonttitle=\gtfamily,varwidth boxed title=0.7\linewidth, breakable, arc=0mm,title={#1},
+{enhanced,sharp corners,colback=black!10!white, colframe=black!10!white , attach boxed title to top left={xshift=0mm,yshift=1mm}, fonttitle=\gtfamily,varwidth boxed title=0.85\linewidth, breakable, arc=0mm,title={#1},
 enlarge top by=2mm,
    boxed title style={empty,arc=0pt,outer arc=0pt,boxrule=0pt},
    underlay unbroken and first={
@@ -39,7 +39,7 @@ enlarge top by=2mm,
 
 
 \DeclareTColorBox{ascolorbox1}{ o m O{}}%
-{enhanced,colback=white, skin=enhancedlast jigsaw,breakable, attach boxed title to top left={xshift=-4mm,yshift=-0.5mm}, fonttitle=\bfseries\gtfamily, varwidth boxed title=0.7\linewidth, colbacktitle=black!45!white,colframe=black,
+{enhanced,colback=white, skin=enhancedlast jigsaw,breakable, attach boxed title to top left={xshift=-4mm,yshift=-0.5mm}, fonttitle=\bfseries\gtfamily, varwidth boxed title=0.85\linewidth, colbacktitle=black!45!white,colframe=black,
    boxed title style={empty,arc=0pt,outer arc=0pt,boxrule=0pt},
    underlay boxed title={%
 \fill[black!45!white] (title.north west) -- (title.north east) -- +(\tcboxedtitleheight-1mm,-\tcboxedtitleheight+1mm)
@@ -53,7 +53,7 @@ IfValueTF={#1}{title=#2〈#1〉}{title=#2},#3}
 
 \DeclareTColorBox{ascolorbox2}{ m O{}}%
 {enhanced, colback=white, boxrule=1pt, 
-attach boxed title to top left={xshift=.5cm,yshift=-2mm}, fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,coltitle=black, boxed title style={enhanced,boxrule=0.75mm,colframe=white, 
+attach boxed title to top left={xshift=.5cm,yshift=-2mm}, fonttitle=\bfseries,varwidth boxed title=0.85\linewidth,coltitle=black, boxed title style={enhanced,boxrule=0.75mm,colframe=white, 
     borderline={0.1mm}{0mm}{black},
     borderline={0.1mm}{0.75mm}{black},
     interior style={top color=black!10!white,bottom color=black!10!white,
@@ -98,8 +98,8 @@ underlay last={\draw[#2,line width=1pt]
 
 \DeclareTColorBox{ascolorbox4}{ o m O{3} O{}}%
 {enhanced, colback=white, colframe=white,
-attach boxed title to top left={xshift=1cm,yshift=-\tcboxedtitleheight/2}, fonttitle=\bfseries,varwidth boxed title=0.7\linewidth, coltitle=black, fonttitle=\gtfamily, 
-enlarge top by=2mm, enlarge bottom by=2mm, breakable,
+attach boxed title to top left={xshift=1cm,yshift=-\tcboxedtitleheight/2}, fonttitle=\bfseries,varwidth boxed title=0.85\linewidth, coltitle=black, fonttitle=\gtfamily, 
+enlarge top by=2mm, enlarge bottom by=2mm, breakable, sharp corners,
 boxed title style={colback=white,left=0mm,right=0mm}, 
 borderline={.75pt}{#3pt}{black,dotted},
 underlay unbroken={\draw[black,line width=.5pt]
@@ -155,7 +155,7 @@ IfValueTF={#1}{title=【#2】〈#1〉}{title=【#2】},#4}
 
 
 \DeclareTColorBox{ascolorbox5}{ O{} m O{black} O{} }%
-{enhanced,colback=white, colframe=white, coltext=#3, attach boxed title to top left={xshift=1mm,yshift=0mm}, fonttitle=\bfseries\gtfamily,varwidth boxed title=0.7\linewidth, colbacktitle=black!45!white, breakable,
+{enhanced,colback=white, colframe=white, coltext=#3, attach boxed title to top left={xshift=1mm,yshift=0mm}, fonttitle=\bfseries\gtfamily,varwidth boxed title=0.85\linewidth, colbacktitle=black!45!white, breakable,
 enlarge top by=3mm, enlarge bottom by=3mm, 
    boxed title style={empty,arc=0pt,outer arc=0pt,boxrule=0pt},
    underlay boxed title={\fill[#3] (title.north west) 
@@ -211,7 +211,7 @@ attach title to upper=\quad, #2
 
 \DeclareTColorBox{ascolorbox9}{m O{3} O{} }%
 {enhanced, colframe=white, 
-attach boxed title to top left={xshift=-1mm,yshift=0mm}, fonttitle=\bfseries,varwidth boxed title=0.7\linewidth, colbacktitle=black!45!white, coltitle=black, 
+attach boxed title to top left={xshift=-1mm,yshift=0mm}, fonttitle=\bfseries,varwidth boxed title=0.85\linewidth, colbacktitle=black!45!white, coltitle=black, 
 enlarge top by=2mm, enlarge bottom by=2mm, 
 arc=0mm, boxrule=.001pt, interior style={left color=white, right color=black!30!white},
 boxed title style={size=small,colback=white}, 
@@ -267,7 +267,7 @@ IfValueTF={#1}{title=【#2】〈#1〉}{title=【#2】},#4}
 
 \DeclareTColorBox{ascolorbox11}{ o m O{4} O{} }%
 {enhanced, colback=white, colframe=white,
-attach boxed title to top left={xshift=1cm,yshift=-3mm}, fonttitle=\gtfamily,
+attach boxed title to top left={xshift=1cm,yshift=-3mm}, fonttitle=\gtfamily,varwidth boxed title=0.85\linewidth, 
 boxed title style={empty,left=-2mm,right=-2mm}, coltitle=black,breakable,
 underlay unbroken={\draw[gray!40!white,line width=.5pt]
        ([yshift=-#3*0.5pt]title.east)--([yshift=-#3*0.5pt]title.east-|frame.east) -- ++ (0pt,#3pt) -- ++ (-#3pt,0pt)
@@ -331,7 +331,7 @@ IfValueTF={#1}{title={【#2】〈#1〉}}{title=【#2】},#4}
 
 \DeclareTColorBox{ascolorbox12}{ o m O{} }%
 {enhanced, colback=white, colframe=black, sharp corners,boxrule=2pt,
-attach boxed title to top left={xshift=1cm,yshift=-9pt}, fonttitle=\bfseries,varwidth boxed title=0.7\linewidth, coltitle=black, breakable,
+attach boxed title to top left={xshift=1cm,yshift=-9pt}, fonttitle=\bfseries,varwidth boxed title=0.85\linewidth, coltitle=black, breakable,
  enlarge top by=2mm, top=4mm,
 boxed title style={colframe=black, size=small,colback=gray!20!white}, 
 underlay unbroken={\fill[black]
@@ -491,7 +491,7 @@ IfValueTF={#1}{title={#2〈#1〉}}{title=#2},#3}
 
 \DeclareTColorBox{ascolorbox17}{ o m O{gray} O{}}%
 {enhanced, colback=white, colframe=white,
-attach boxed title to top left={xshift=1.5cm,yshift=-\tcboxedtitleheight/2}, fonttitle=\bfseries,varwidth boxed title=0.7\linewidth, coltitle=black, fonttitle=\gtfamily, 
+attach boxed title to top left={xshift=1.5cm,yshift=-\tcboxedtitleheight/2}, fonttitle=\bfseries,varwidth boxed title=0.85\linewidth, coltitle=black, fonttitle=\gtfamily, 
 enlarge top by=2mm, enlarge bottom by=2mm, breakable,
 boxed title style={colback=white,left=0mm,right=0mm},
 underlay unbroken={\draw[fill=black, draw=black]
@@ -528,7 +528,7 @@ cos +(\tcboxedtitleheight,\tcboxedtitleheight/2) sin +(\tcboxedtitleheight,\tcbo
 
 \DeclareTColorBox{ascolorbox19}{ o m O{2} O{}}%
 {enhanced, colback=white, colframe=white,
-attach boxed title to top left={xshift=5mm,yshift=-\tcboxedtitleheight/2}, fonttitle=\bfseries,varwidth boxed title=0.7\linewidth, coltitle=black, fonttitle=\gtfamily, 
+attach boxed title to top left={xshift=5mm,yshift=-\tcboxedtitleheight/2}, fonttitle=\bfseries,varwidth boxed title=0.85\linewidth, coltitle=black, fonttitle=\gtfamily, 
 enlarge top by=2mm, enlarge bottom by=2mm, breakable, top=3mm, bottom=3mm,
 boxed title style={colback=white,left=0mm,right=0mm,top=-1mm,bottom=-1mm}, 
 underlay unbroken={\draw[black!40!white,line width=.5pt]
