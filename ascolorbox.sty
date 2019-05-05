@@ -1,12 +1,20 @@
-\NeedsTeXFormat{pLaTeX2e}
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ascolorbox}[2019/4/30, Version 1.0.3]
-\RequirePackage{tikz,tcolorbox,varwidth,multicol}
+\RequirePackage{tikz,tcolorbox,varwidth,multicol,ifthen,ifluatex}
 
 \usetikzlibrary{calc}
 \tcbuselibrary{xparse,hooks,skins,breakable}
 
+\ifthenelse{\boolean{luatex}}{\RequirePackage{luatexja}}{}
+
+\ifthenelse{\boolean{luatex}}{
+      \def\ascb@zw{\zw}
+}{%pLaTeX, upLaTeX
+        \def\ascb@zw{zw}
+}
+
 \DeclareTColorBox{simplesquarebox}{ o m O{.5} O{} }% 
-{empty, left=2mm, right=2mm, top=-1mm, attach boxed title to top left={xshift=1.2zw}, boxed title style={empty,left=-2mm,right=-2mm}, colframe=black, coltitle=black, coltext=black, breakable, 
+{empty, left=2mm, right=2mm, top=-1mm, attach boxed title to top left={xshift={1.2zw\ascb@zw}}, boxed title style={empty,left=-2mm,right=-2mm}, colframe=black, coltitle=black, coltext=black, breakable, 
 underlay unbroken={\draw[black,line width=#3pt](title.east) -- (title.east-|frame.east) -- (frame.south east) -- (frame.south west) -- (title.west-|frame.west) -- (title.west); },
 underlay first={\draw[black,line width=#3pt](title.east) -- (title.east-|frame.east) -- (frame.south east) ;
 \draw[black,line width=#3pt] (frame.south west) -- (title.west-|frame.west) -- (title.west); },
@@ -468,7 +476,7 @@ title={#2},#1}
 \newenvironment{ascolorbox15}[2][]{%
 \begin{ascolorbox@originalascolorbox15}[#1]{#2}%
 \setlength{\columnseprule}{0pt}%
-\columnsep=5.5zw
+\columnsep={5.5\ascb@zw}
 \begin{multicols}{2}%
 }{%
 \end{multicols}%
