@@ -7,15 +7,20 @@
 
 \ifthenelse{\boolean{luatex}}{% LuaLaTeX
               \RequirePackage{luatexja}
+              \def\ascb@textgt#1{\textgt{#1}}
        }{
               \ifthenelse{\boolean{xetex}}{% XeLaTeX
                      \RequirePackage{zxjatype}
+                     \def\ascb@textgt#1{\textbf{#1}}
               }{
                      \ifthenelse{\boolean{ptex}}{% pLaTeX
+                            \def\ascb@textgt#1{\textgt{#1}}
                      }{
                             \ifthenelse{\boolean{uptex}}{% upLaTeX
+                                   \def\ascb@textgt#1{\textgt{#1}}
                             }{% pdfLaTeX
                                    \RequirePackage[whole]{bxcjkjatype}
+                                   \def\ascb@textgt#1{\textbf{#1}}
                             }
                      }
               }
@@ -40,12 +45,12 @@ enlarge top by=2mm,
       \draw[black,ultra thick] (frame.north west) -- (frame.north east);
       \draw[black] ([yshift=-.8mm]frame.north west) -- ([yshift=-.8mm]frame.north east);
       \fill[black] ([yshift=1mm]frame.north west) rectangle +(6mm,6mm);
-      \node[white] at ([xshift=3mm,yshift=4mm]frame.north west){\large\textbf{練}};
-      \node at ([xshift=9mm,yshift=4mm]frame.north west){\large\textbf{習}};
+      \node[white] at ([xshift=3mm,yshift=4mm]frame.north west){\large{練}};
+      \node at ([xshift=9mm,yshift=4mm]frame.north west){\large\ascb@textgt{習}};
       \fill[black] ([xshift=12mm,yshift=1mm]frame.north west) rectangle +(6mm,6mm);
-      \node[white] at ([xshift=15mm,yshift=4mm]frame.north west){\large\textbf{問}};
-      \node at ([xshift=21mm,yshift=4mm]frame.north west){\large\textbf{題}};
-      \draw[thick] ([yshift=1mm]frame.north west) -- ++(0mm,6mm) -- ++(24mm,0mm) -- node[right=2mm] {\textbf{#1}} ++(0mm,-6mm) -- cycle;
+      \node[white] at ([xshift=15mm,yshift=4mm]frame.north west){\large\ascb@textgt{問}};
+      \node at ([xshift=21mm,yshift=4mm]frame.north west){\large\ascb@textgt{題}};
+      \draw[thick] ([yshift=1mm]frame.north west) -- ++(0mm,6mm) -- ++(24mm,0mm) -- node[right=2mm] {\ascb@textgt{#1}} ++(0mm,-6mm) -- cycle;
   },
    underlay unbroken and last={
       \draw[black,ultra thick] (frame.south west) -- (frame.south east);
@@ -175,7 +180,7 @@ IfValueTF={#1}{title=【#2】〈#1〉}{title=【#2】},#4}
 enlarge top by=3mm, enlarge bottom by=3mm, 
    boxed title style={empty,arc=0pt,outer arc=0pt,boxrule=0pt},
    underlay boxed title={\fill[#3] (title.north west) 
-      -- (title.north east) --node[right=3mm]{\textbf{#1}}+(0,-\tcboxedtitleheight+.5mm)
+      -- (title.north east) --node[right=3mm]{\ascb@textgt{#1}}+(0,-\tcboxedtitleheight+.5mm)
       -- ([xshift=-1mm,yshift=.5mm]frame.north east) 
       -- +(0mm,-.5mm) -- (title.south west) -- cycle;
       \draw[#3] ([yshift=-.5mm]title.south west) --
