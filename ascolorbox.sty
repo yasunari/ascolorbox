@@ -9,30 +9,35 @@
               \RequirePackage{luatexja}
               \def\ascb@textgt#1{\textgt{#1}}
               \def\ascb@gtfamily{\gtfamily}
+              \def\ascb@zw#1#2{#1\zw}
        }{
               \ifthenelse{\boolean{xetex}}{% XeLaTeX
                      \RequirePackage{zxjatype}
                      \def\ascb@textgt#1{\textbf{#1}}
                      \def\ascb@gtfamily{\bfseries}
+                     \def\ascb@zw#1#2{#2}
               }{
                      \ifthenelse{\boolean{ptex}}{% pLaTeX
                             \def\ascb@textgt#1{\textgt{#1}}
                             \def\ascb@gtfamily{\gtfamily}
+                            \def\ascb@zw#1#2{#1zw}
                      }{
                             \ifthenelse{\boolean{uptex}}{% upLaTeX
                                    \def\ascb@textgt#1{\textgt{#1}}
                                    \def\ascb@gtfamily{\gtfamily}
+                                   \def\ascb@zw#1#2{#1zw}
                             }{% pdfLaTeX
                                    \RequirePackage[whole]{bxcjkjatype}
                                    \def\ascb@textgt#1{\textbf{#1}}
                                    \def\ascb@gtfamily{\gtfamily}
+                                   \def\ascb@zw#1#2{#2}
                             }
                      }
               }
 }
 
 \DeclareTColorBox{simplesquarebox}{ o m O{.5} O{} }% 
-{empty, left=2mm, right=2mm, top=-1mm, attach boxed title to top left={xshift=11pt}, boxed title style={empty,left=-2mm,right=-2mm}, colframe=black, coltitle=black, coltext=black, breakable, 
+{empty, left=2mm, right=2mm, top=-1mm, attach boxed title to top left={xshift=\ascb@zw{1.2}{11pt}}, boxed title style={empty,left=-2mm,right=-2mm}, colframe=black, coltitle=black, coltext=black, breakable, 
 underlay unbroken={\draw[black,line width=#3pt](title.east) -- (title.east-|frame.east) -- (frame.south east) -- (frame.south west) -- (title.west-|frame.west) -- (title.west); },
 underlay first={\draw[black,line width=#3pt](title.east) -- (title.east-|frame.east) -- (frame.south east) ;
 \draw[black,line width=#3pt] (frame.south west) -- (title.west-|frame.west) -- (title.west); },
@@ -494,7 +499,7 @@ title={#2},#1}
 \newenvironment{ascolorbox15}[2][]{%
 \begin{ascolorbox@originalascolorbox15}[#1]{#2}%
 \setlength{\columnseprule}{0pt}%
-\columnsep=51pt
+\columnsep=\ascb@zw{5.5}{51pt}
 \begin{multicols}{2}%
 }{%
 \end{multicols}%
