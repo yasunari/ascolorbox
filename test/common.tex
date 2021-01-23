@@ -1,5 +1,7 @@
 % Re:VIEWの場合サブタイトルは使わない前提
 % ---------------------------------------------
+simplesquarebox
+
 \begin{simplesquarebox}{CAPTION}
 
 TEST, TEST, TEST
@@ -13,6 +15,7 @@ TEST, TEST, TEST
 
 \end{simplesquarebox}
 
+
 % オプションとしてthicknessを持つ
 \begin{simplesquarebox}{CAPTION}[1.5]
 
@@ -20,7 +23,54 @@ TEST, TEST, TEST
 
 \end{simplesquarebox}
 
+% review側からは\begin{note}[CAPTION] になる。
+
+% オプションでやりづらい… CAPTION、固有オプション、tcolorboxオプション で指定できるものとする。
+
+\begin{reviewnote}
+
+TEST, TEST, TEST
+
+\end{reviewnote}
+
+\begin{reviewnote}[CAPTION]
+
+TEST, TEST, TEST
+
+\end{reviewnote}
+
+\begin{reviewcaution}[CAPTION]
+
+TEST, TEST, TEST
+
+\end{reviewcaution}
+
+\begin{reviewnote}[CAPTION]
+
+TEST, TEST, TEST
+
+\end{reviewnote}
+
+% \begin{rvsimplesquarebox}{CAPTION}{thickness=1.5}{colframe=red!75!black}
+% 
+% TEST, TEST, TEST
+% 
+% \end{rvsimplesquarebox}
+% 
+% \begin{rvsimplesquarebox}{}{thickness=1.5}{}
+% 
+% TEST, TEST, TEST
+% 
+% \end{rvsimplesquarebox}
+% 
+% \begin{rvsimplesquarebox}{}{}{}
+% 
+% TEST, TEST, TEST
+% 
+% \end{rvsimplesquarebox}
+
 % ---------------------------------------------
+practicebox
 % FIXME:1行の内容のときにおかしい
 \begin{practicebox}{CAPTION}
 
@@ -35,6 +85,8 @@ TEST, TEST, TEST
 \end{practicebox}
 
 % ---------------------------------------------
+ascolorbox1
+
 \begin{ascolorbox1}{CAPTION}
 
 TEST, TEST, TEST
@@ -49,6 +101,8 @@ TEST, TEST, TEST
 \end{ascolorbox1}
 
 % ---------------------------------------------
+ascolorbox2
+
 \begin{ascolorbox2}{CAPTION}
 
 TEST, TEST, TEST
@@ -62,6 +116,8 @@ TEST, TEST, TEST
 \end{ascolorbox2}
 
 % ---------------------------------------------
+ascolorbox3
+
 \begin{ascolorbox3}{CAPTION}
 
 TEST, TEST, TEST
@@ -83,6 +139,8 @@ TEST, TEST, TEST
 \end{ascolorbox3}
 
 % ---------------------------------------------
+ascolorbox4
+
 \begin{ascolorbox4}{CAPTION}
 
 TEST, TEST, TEST
@@ -104,6 +162,8 @@ TEST, TEST, TEST
 \end{ascolorbox4}
 
 % ---------------------------------------------
+ascolorbox5
+
 \begin{ascolorbox5}{CAPTION}
 
 TEST, TEST, TEST
@@ -125,6 +185,8 @@ TEST, TEST, TEST
 \end{ascolorbox5}
 
 % ---------------------------------------------
+ascolorbox8
+
 \begin{ascolorbox8}{CAPTION}
 
 TEST, TEST, TEST
@@ -138,6 +200,8 @@ TEST, TEST, TEST
 \end{ascolorbox8}
 
 % ---------------------------------------------
+ascolorbox9
+
 \begin{ascolorbox9}{CAPTION}
 
 TEST, TEST, TEST
@@ -159,6 +223,8 @@ TEST, TEST, TEST
 \end{ascolorbox9}
 
 % ---------------------------------------------
+ascolorbox10
+
 \begin{ascolorbox10}{CAPTION}
 
 TEST, TEST, TEST
@@ -180,6 +246,8 @@ TEST, TEST, TEST
 \end{ascolorbox10}
 
 % ---------------------------------------------
+ascolorbox11
+
 \begin{ascolorbox11}{CAPTION}
 
 TEST, TEST, TEST
@@ -201,6 +269,8 @@ TEST, TEST, TEST
 \end{ascolorbox11}
 
 % ---------------------------------------------
+ascolorbox12
+
 \begin{ascolorbox12}{CAPTION}
 
 TEST, TEST, TEST
@@ -215,6 +285,8 @@ TEST, TEST, TEST
 \end{ascolorbox12}
 
 % ---------------------------------------------
+ascolorbox13
+
 \begin{ascolorbox13}{CAPTION}
 
 TEST, TEST, TEST
@@ -228,6 +300,8 @@ TEST, TEST, TEST
 \end{ascolorbox13}
 
 % ---------------------------------------------
+ascolorbox14
+
 \begin{ascolorbox14}{CAPTION}
 
 TEST, TEST, TEST
@@ -242,6 +316,8 @@ TEST, TEST, TEST
 \end{ascolorbox14}
 
 % ---------------------------------------------
+ascolorbox15
+
 \begin{ascolorbox15}{CAPTION}
 
 TEST, TEST, TEST
@@ -256,6 +332,8 @@ TEST, TEST, TEST
 \end{ascolorbox15}
 
 % ---------------------------------------------
+ascolorbox16
+
 \begin{ascolorbox16}{CAPTION}
 
 TEST, TEST, TEST
@@ -270,6 +348,8 @@ TEST, TEST, TEST
 \end{ascolorbox16}
 
 % ---------------------------------------------
+ascolorbox17
+
 \begin{ascolorbox17}{CAPTION}
 
 TEST, TEST, TEST
@@ -291,6 +371,8 @@ TEST, TEST, TEST
 \end{ascolorbox17}
 
 % ---------------------------------------------
+ascolorbox18
+
 \begin{ascolorbox18}{CAPTION}
 
 TEST, TEST, TEST
@@ -308,6 +390,8 @@ TEST, TEST, TEST
 TEST, TEST, TEST
 
 % ---------------------------------------------
+ascolorbox19
+
 \end{ascolorbox19}
 
 % FIXME:キャプションなしの表現がおかしい
