@@ -33,15 +33,28 @@
                                    \def\ascb@gtfamily{\gtfamily}
                                    \def\ascb@zw#1#2{#2}
                             }
-    
                  }
               }
 }
 
+% tcolorboxにパラメータを追加する
+\def\tcb@rv@line@width{.5pt}
+\def\tcb@rv@line@color{black}
+\tcbset{
+  rv line width/.store in=\tcb@rv@line@width,
+  rv line color/.store in=\tcb@rv@line@color
+}
+
+% ここからテスト中。こういうパラメータを変換で作って渡したいと思ったんだけど、展開でうまくいかないげ
+\newcommand{\reviewnote@tcoption}{rv line width=5pt,rv line color=red}
+
+% 結局これをパラメータベースで作るなら、tcoptionパラメータも作ってしまえばいい、と言えるか。
 \newenvironment{reviewnote}[1][]{%
   \csdef{review@withcaption}{true}
   \notblank{#1}{
-    \begin{rvsimplesquarebox@caption}{#1}[rv line width=5pt,rv line color=red]
+%    \begin{rvsimplesquarebox@caption}{#1}[\reviewnote@tcoption]% こちらはだめ。
+% ! Package pgfkeys Error: I do not know the key '/tcb/rv line width=5pt,rv line color=red' and I am going to ignore it. Perhaps you misspelled it.
+    \begin{rvsimplesquarebox@caption}{#1}[rv line width=5pt,rv line color=red]% 直接書けば通る
   }{
     \csundef{review@withcaption}
     \begin{rvsimplesquarebox@nocaption}
@@ -68,13 +81,6 @@
   }{
     \end{rvsimplesquarebox@nocaption}
   }
-}
-
-\def\tcb@rv@line@width{.5pt}
-\def\tcb@rv@line@color{black}
-\tcbset{
-  rv line width/.store in=\tcb@rv@line@width,
-  rv line color/.store in=\tcb@rv@line@color
 }
 
 \DeclareTColorBox{rvsimplesquarebox@nocaption}{ O{} }% 
